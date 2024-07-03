@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Selector</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Select2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Plak de URL van jouw model en voer kenmerken van jouw wijn in:</h1>
+        <form method="POST" class="mt-4">
+            <div class="form-group">
+                <label for="model_url">Model URL:</label>
+                <input type="text" id="model_url" name="model_url" class="form-control" placeholder="Enter the url for your model endpoint:">
+            </div>
+            <div class="form-group">
+                <label for="year">Year:</label>
+                <select id="year" name="year" class="form-control">
+                    {% for year in years %}
+                    <option value="{{ year }}">{{ year }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <select id="category" name="category" class="form-control">
+                    {% for category in categories %}
+                    <option value="{{ category }}">{{ category }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="variety">Grape Variety:</label>
+                <select id="variety" name="variety" class="form-control">
+                {% for variety in varieties %}
+                <option value="{{ variety }}">{{ variety }}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="alcohol_percentage">Alcohol percentage:</label>
+                <input type="number" step=".01" id="alcohol_percentage" name="alcohol_percentage" class="form-control" placeholder="Enter alcohol percentage as a decimal (. separated) without %">
+            </div>
+            <div class="form-group">
+                <label for="region">Region:</label>
+                <select id="region" name="region" class="form-control">
+                    {% for region in regions %}
+                    <option value="{{ region }}">{{ region }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country" class="form-control">
+                    {% for country in countries %}
+                    <option value="{{ country }}">{{ country }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="winery">Winery:</label>
+                <select id="winery" name="winery" class="form-control">
+                    {% for winery in wineries %}
+                    <option value="{{ winery }}">{{ winery }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('select').select2();
+        });
+    </script>
+</body>
+</html>
