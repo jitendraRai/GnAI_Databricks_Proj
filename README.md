@@ -4,7 +4,7 @@ This repository is meant as a demo for using MLOps in Databricks by looking at t
 Steps to run AutoML experiments and track models with MLFlow:
 1. Open your workspace
 2. Click on Create -> Git folder
-3. Choose Github as provider and paste the repository URL: [https://github.com/jitendraRai/GnAI_Databrick.git]
+3. Choose Github as provider and paste the repository URL: [https://github.com/jitendraRai/GnAI_Databricks_Proj.git]
 4. The first step in data preparation is to setup the database and tables. Go to database_setup and run all cells (make sure to use your own name)
 5. Go to Catalog and check if your database and tables are there.
 6. Go back to your workspace and open data_preprocessing. Follow the steps in this notebook.
